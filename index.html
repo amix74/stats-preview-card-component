@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles/style.css">
   <title>Frontend Mentor | Stats preview card component</title>
 </head>
 
@@ -13,22 +13,22 @@
 <main class="card">
   <section class="image-header">
     <picture>
-      <source media="(min-width: 768px )" srcset="./images/image-header-desktop.jpg">
+      <source media="(min-width: 61.25rem)" srcset="./images/image-header-desktop.jpg">
       <img src="./images/image-header-mobile.jpg" alt="Women in the office">
     </picture>
   </section>
   <section class="hero">
-    <h1 class="title">Get insights that help your business grow.</h1>
+    <h1 class="title">Get <span>insights</span> that help your business grow.</h1>
     <p class="description">Discover the benefits of data analytics and make better decisions regarding revenue, customer
       experience, and overall efficiency.</p>
   </section>
-  <sections class="stats">
+  <section class="stats">
     <ul>
-      <li><span class="number">10k+</span><span class="label">companies</span></li>
-      <li><span class="number">314</span><span class="label"></span>templates</li>
-      <li><span class="number">12m+</span><span class="label">queries</span></li>
+      <li class="stats-block"><span class="stat">10k+</span><span class="stat-heading">companies</span></li>
+      <li class="stats-block"><span class="stat">314</span><span class="stat-heading">templates</span></li>
+      <li class="stats-block"><span class="stat">12M+</span><span class="stat-heading">queries</span></li>
     </ul>
-  </sections>
+  </section>
 </main>
 </body>
 </html>

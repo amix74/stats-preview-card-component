@@ -1,0 +1,213 @@
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-700.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/lexend-deca-regular.woff2") format("woff2");
+}
+:root {
+  --clr-primary-main-background: hsl(233, 47%, 7%);
+  --clr-primary-card-background: hsl(244, 38%, 16%);
+  --clr-primary-accent: hsl(277, 64%, 61%);
+  --clr-neutral-main-heading: hsl(0, 0%, 100%);
+  --clr-neutral-main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-stat-headings: hsla(0, 0%, 100%, 0.6);
+  --border-radius: 0.5rem;
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding-inline: 1.5rem;
+  padding-block: 5.5rem;
+  background-color: var(--clr-primary-main-background);
+  font-family: var(--ff-primary);
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.card {
+  max-width: 35rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding-block-end: 2rem;
+  background-color: var(--clr-primary-card-background);
+  display: grid;
+  row-gap: 2.5rem;
+  grid-template-areas: "image" "title" "stats";
+}
+@media (min-width: 61.25rem) {
+  .card {
+    row-gap: 0;
+    grid-template-columns: 1fr calc(50% - 15px);
+    align-items: start;
+    grid-template-areas: "title image" "stats image";
+    max-width: 69.375rem;
+    padding-block-end: 0;
+  }
+}
+
+.image-header {
+  grid-area: image;
+}
+
+.hero {
+  grid-area: title;
+  display: grid;
+  gap: 1rem;
+  padding-inline: 1.96875rem;
+}
+.hero .title {
+  color: var(--clr-neutral-main-heading);
+  font-size: 1.75rem;
+  line-height: 114%;
+  text-align: center;
+  text-wrap: unset;
+}
+.hero .title span {
+  color: var(--clr-primary-accent);
+}
+.hero .description {
+  color: var(--clr-neutral-main-paragraph);
+  text-align: center;
+  line-height: 167%;
+  max-width: 90%;
+}
+@media (min-width: 61.25rem) {
+  .hero {
+    gap: 1.5625rem;
+    padding-inline-start: 4.5rem;
+    padding-inline-end: 5.9375rem;
+    padding-block-start: 72px;
+  }
+  .hero .title {
+    font-size: 2.25rem;
+    line-height: 122%;
+  }
+  .hero .title, .hero .description {
+    text-align: left;
+  }
+}
+
+.stats {
+  grid-area: stats;
+}
+.stats ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+@media (min-width: 61.25rem) {
+  .stats ul {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
+    padding-inline-start: 4.5rem;
+    padding-inline-end: 5.9375rem;
+    margin-block-start: 0.75rem;
+  }
+}
+.stats .stats-block {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@media (min-width: 61.25rem) {
+  .stats .stats-block {
+    justify-items: start;
+  }
+}
+.stats .stat {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--clr-neutral-main-heading);
+}
+.stats .stat-heading {
+  font-family: var(--ff-secondary);
+  font-size: 0.75rem;
+  line-height: 1.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-neutral-stat-headings);
+}
+
+/*# sourceMappingURL=style.css.map */
