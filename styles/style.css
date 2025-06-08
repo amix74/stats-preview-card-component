@@ -162,10 +162,10 @@ body {
     text-align: left;
   }
   .hero .description {
-    padding-inline-end: 3.625rem;
+    padding-inline-end: 2rem;
   }
 }
-@media (min-width: 68.75rem) {
+@media (min-width: 69rem) {
   .hero {
     padding-block-start: 4.5rem;
     padding-block-end: 0.5rem;
