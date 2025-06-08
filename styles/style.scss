@@ -79,23 +79,27 @@ body {
     gap: 1.5625rem;
     padding-inline-start: 4.5rem;
     padding-inline-end: 5.9375rem;
-    padding-block-start: 72px;
-
-    .title {
-      font-size: 2.25rem;
-      line-height: 122%;
-    }
+    padding-block-start: 4.0625rem;
+    padding-block-end: 0.5rem;
 
     .title, .description {
       text-align: left;
     }
   }
+
+  @include mq(large) {
+    padding-block-start: 4.5rem;
+    padding-block-end: 0.5rem;
+
+    .title {
+      font-size: 2.25rem;
+      line-height: 122%;
+    }
+  }
 }
 
-.stats {
-  grid-area: stats;
-
   ul {
+  grid-area: stats;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -103,15 +107,14 @@ body {
 
     @include mq(medium) {
       grid-template-columns: repeat(3, 1fr);
-      justify-items: stretch;
+      justify-items: start;
 
       padding-inline-start: 4.5rem;
       padding-inline-end: 5.9375rem;
 
-      margin-block-start: 0.75rem;
-
-
-      //justify-items: start;
+      .stats-block:nth-child(2) {
+        padding-inline-start: 0.25rem;
+      }
     }
   }
 
@@ -128,7 +131,6 @@ body {
   .stat {
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.25;
     color: var(--clr-neutral-main-heading)
   }
 
@@ -140,5 +142,4 @@ body {
     text-transform: uppercase;
     color: var(--clr-neutral-stat-headings);
   }
-}
 
