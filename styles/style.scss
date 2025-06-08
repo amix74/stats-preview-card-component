@@ -46,9 +46,11 @@ body {
 
 .image-header {
   grid-area: image;
+  background-color: var(--clr-primary-accent);
 
   img {
-
+    mix-blend-mode: multiply;
+    opacity: 0.75;
   }
 
 

@@ -127,7 +127,13 @@ body {
 
 .image-header {
   grid-area: image;
+  background-color: var(--clr-primary-accent);
 }
+.image-header img {
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}
+
 .hero {
   grid-area: title;
   display: grid;
