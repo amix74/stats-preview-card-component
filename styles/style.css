@@ -27,8 +27,8 @@
   --clr-neutral-main-paragraph: hsla(0, 0%, 100%, 0.75);
   --clr-neutral-stat-headings: hsla(0, 0%, 100%, 0.6);
   --border-radius: 0.5rem;
-  --ff-primary: "Inter", sans-serif;
-  --ff-secondary: "Lexend Deca", sans-serif;
+  --ff-primary: "Inter";
+  --ff-secondary: "Lexend Deca";
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -99,7 +99,7 @@ body {
   padding-inline: 1.5rem;
   padding-block: 5.5rem;
   background-color: var(--clr-primary-main-background);
-  font-family: var(--ff-primary);
+  font-family: var(--ff-primary), sans-serif;
   font-size: 0.9375rem;
   font-weight: 400;
 }
@@ -128,7 +128,6 @@ body {
 .image-header {
   grid-area: image;
 }
-
 .hero {
   grid-area: title;
   display: grid;
@@ -139,6 +138,7 @@ body {
   color: var(--clr-neutral-main-heading);
   font-size: 1.75rem;
   line-height: 114%;
+  letter-spacing: 0.1px;
   text-align: center;
   text-wrap: unset;
 }
@@ -149,7 +149,6 @@ body {
   color: var(--clr-neutral-main-paragraph);
   text-align: center;
   line-height: 167%;
-  max-width: 90%;
 }
 @media (min-width: 61.25rem) {
   .hero {
@@ -161,6 +160,9 @@ body {
   }
   .hero .title, .hero .description {
     text-align: left;
+  }
+  .hero .description {
+    padding-inline-end: 3.625rem;
   }
 }
 @media (min-width: 68.75rem) {
@@ -207,11 +209,17 @@ ul {
 .stat {
   font-size: 1.5rem;
   font-weight: 700;
+  line-height: 1.25;
   color: var(--clr-neutral-main-heading);
+}
+@media (min-width: 61.25rem) {
+  .stat {
+    line-height: 1.5;
+  }
 }
 
 .stat-heading {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-secondary), sans-serif;
   font-size: 0.75rem;
   line-height: 1.5625rem;
   letter-spacing: 0.08em;
